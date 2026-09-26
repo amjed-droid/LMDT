@@ -124,7 +124,7 @@ print(test_boot)
 #>   Local Manifold Dispersion Test (LMDT, wild_bootstrap)
 #> 
 #> data:  y ~ x1 + x2
-#> Z_LMD = 7.8466, T_LMD = 0.7716, p-value = 1
+#> Z_LMD = 7.8466, T_LMD = 0.7716, p-value = 0.005
 #> alternative hypothesis: heteroskedasticity with local manifold smoothness (T_LMD < 1)
 #> replications: B = 199, neighborhood size: k = 
 #> denoising scheme: none
