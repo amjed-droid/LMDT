@@ -78,7 +78,7 @@ lmdt_test.lm <- function(x, ...) {
 #' @param y A numeric vector of regression residuals (or response vector if x is regressors).
 #' @param k An integer neighborhood size. If \code{NULL}, default rule of thumb is used.
 #' @param method A character string specifying the p-value calibration method:
-#'   \code{"wild_bootstrap"} (default), \code{"permutation"}, or \code{"asymptotic"}.
+#'   \code{"permutation"} (default, exact finite-sample validity), \code{"asymptotic"}, or \code{"wild_bootstrap"}.
 #' @param alternative A character string specifying the alternative hypothesis:
 #'   \code{"one.sided"} (smooth manifold variance, default) or \code{"two.sided"} (general non-smooth).
 #' @param denoise A character string specifying high-dimensional pre-filtering:
@@ -90,7 +90,7 @@ lmdt_test.lm <- function(x, ...) {
 #' @export
 lmdt_test.default <- function(x, y,
                               k = NULL,
-                              method = c("wild_bootstrap", "permutation", "asymptotic"),
+                              method = c("permutation", "asymptotic", "wild_bootstrap"),
                               alternative = c("one.sided", "two.sided"),
                               denoise = c("none", "pca", "metric"),
                               B = 499L,
@@ -167,10 +167,12 @@ lmdt_test.default <- function(x, y,
       p_val <- (1 + sum(abs(T_perm - 1) >= abs(T_LMD_obs - 1))) / (B + 1)
     }
   } else if (method == "wild_bootstrap") {
+    # Homoskedastic Wild Bootstrap under H0
+    sigma_pool <- stats::sd(e)
     T_boot <- numeric(B)
     for (b in seq_len(B)) {
-      v <- sample(c(-1, 1), size = n, replace = TRUE)
-      e_star <- e * v
+      v <- stats::rnorm(n)
+      e_star <- sigma_pool * v
       u_star <- log(abs(e_star) + c)
       if (denoise == "metric") {
         X_b <- lmdt_metric(X, u_star, lambda = lambda)

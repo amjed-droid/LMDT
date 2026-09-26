@@ -86,6 +86,7 @@ run_simulation_benchmark <- function(n_reps = 100, n = 200, alpha = 0.05) {
   for (sc in scenarios) {
     cat(sprintf("\nProcessing %s ... ", sc$name))
     rej_lmdt_a <- 0
+    rej_lmdt_p <- 0
     rej_lmdt_b <- 0
     rej_bp     <- 0
     rej_white  <- 0
@@ -101,6 +102,10 @@ run_simulation_benchmark <- function(n_reps = 100, n = 200, alpha = 0.05) {
       res_a <- LMDT::lmdt_test(d$X, e_hat, method = "asymptotic", denoise = sc$denoise)
       if (res_a$p.value < alpha) rej_lmdt_a <- rej_lmdt_a + 1
       
+      # LMDT Permutation
+      res_p <- LMDT::lmdt_test(d$X, e_hat, method = "permutation", B = 199L, denoise = sc$denoise)
+      if (res_p$p.value < alpha) rej_lmdt_p <- rej_lmdt_p + 1
+
       # LMDT Wild Bootstrap
       res_b <- LMDT::lmdt_test(d$X, e_hat, method = "wild_bootstrap", B = 199L, denoise = sc$denoise)
       if (res_b$p.value < alpha) rej_lmdt_b <- rej_lmdt_b + 1
@@ -128,6 +133,7 @@ run_simulation_benchmark <- function(n_reps = 100, n = 200, alpha = 0.05) {
       Scenario = sc$name,
       p = sc$p,
       LMDT_Asymp = rej_lmdt_a / n_reps,
+      LMDT_Perm = rej_lmdt_p / n_reps,
       LMDT_WildBoot = rej_lmdt_b / n_reps,
       Breusch_Pagan = rej_bp / n_reps,
       White = white_display,
