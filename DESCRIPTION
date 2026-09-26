@@ -1,0 +1,28 @@
+Package: LMDT
+Type: Package
+Title: Local Manifold Dispersion Test for Heteroskedasticity
+Version: 0.1.0
+Authors@R: person(given = "Ahmed Sattar",
+                  family = "Jabbar",
+                  role = c("aut", "cre"),
+                  email = "ahmed.state.me@gmail.com")
+Description: Implements the Local Manifold Dispersion Test (LMDT) for 
+    detecting complex, non-linear, and high-dimensional heteroskedasticity 
+    in linear regression models. LMDT measures the spectral smoothness 
+    (Dirichlet energy) of robust log-dispersion residuals over a self-tuning 
+    k-nearest neighbors graph Laplacian, as formulated in Jabbar (2026). 
+    The test statistic is asymptotically distribution-free with respect to error 
+    kurtosis and accommodates high-dimensional covariates (p > 50) via 
+    Gavish-Donoho optimal hard thresholding and supervised metric learning.
+License: GPL (>= 3)
+URL: https://github.com/amjed-droid/LMDT
+BugReports: https://github.com/amjed-droid/LMDT/issues
+Depends: 
+    R (>= 4.0.0)
+Imports: 
+    stats
+Suggests: 
+    testthat (>= 3.0.0)
+Encoding: UTF-8
+RoxygenNote: 7.3.1
+NeedsCompilation: no

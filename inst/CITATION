@@ -1,0 +1,8 @@
+bibentry(
+  bibtype = "Article",
+  title   = "The Local Manifold Dispersion Test: A Nonparametric Graph-Spectral Approach for Detecting Complex and High-Dimensional Heteroskedasticity",
+  author  = person("Ahmed Sattar", "Jabbar"),
+  journal = "Working Paper",
+  year    = "2026",
+  header  = "To cite the LMDT package in publications, please use:"
+)
