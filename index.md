@@ -20,10 +20,11 @@ $`k`$-nearest neighbors normalized Laplacian matrix.
 
 ## Key Features
 
-- **Kurtosis Invariance:** The zero-diagonal structure of the affinity
-  operator completely eliminates fourth-order error moments from the
-  asymptotic variance, guaranteeing exact size calibration under
-  heavy-tailed (e.g., Student-$`t`$) error distributions.
+- **Asymptotic Kurtosis Invariance:** The zero-diagonal structure of the
+  affinity operator asymptotically eliminates fourth-order error moments
+  from the limiting variance at rate $`O(1/n)`$, providing robust size
+  calibration under heavy-tailed (e.g., Student-$`t`$) error
+  distributions.
 - **Fast Computational Complexity:** Evaluates in
   $`O(k \cdot n \log n)`$ time, scaling easily to thousands of
   observations.
