@@ -1,0 +1,43 @@
+url: https://amjed-droid.github.io/LMDT/
+
+template:
+  bootstrap: 5
+  bootswatch: flatly
+
+home:
+  title: "LMDT: Local Manifold Dispersion Test"
+  description: "Nonparametric Graph-Spectral Heteroskedasticity Testing in R"
+
+navbar:
+  structure:
+    left: [intro, reference, news]
+    right: [github]
+  components:
+    github:
+      icon: fab fa-github fa-lg
+      href: https://github.com/amjed-droid/LMDT
+      aria-label: GitHub repository
+
+reference:
+  - title: "Core Hypothesis Testing"
+    desc: "Main testing functions and formula/model interfaces"
+    contents:
+      - lmdt_test
+  - title: "S3 Diagnostics and Visualizations"
+    desc: "Methods for displaying and plotting test outcomes"
+    contents:
+      - print.lmdt
+      - plot.lmdt
+  - title: "Spectral Graph Infrastructure"
+    desc: "Graph Laplacian and self-tuning affinity matrices"
+    contents:
+      - lmdt_graph
+  - title: "High-Dimensional Denoising"
+    desc: "Singular-value thresholding and metric learning for p > 50"
+    contents:
+      - lmdt_pca
+      - lmdt_metric
+  - title: "Package Overview"
+    desc: "Documentation and citation information"
+    contents:
+      - LMDT-package

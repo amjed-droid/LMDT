@@ -7,3 +7,5 @@
 *.Rcheck/
 .DS_Store
 Thumbs.db
+docs/
+_pkgdown/

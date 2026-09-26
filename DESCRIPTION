@@ -15,7 +15,8 @@ Description: Implements the Local Manifold Dispersion Test (LMDT) for
     kurtosis and accommodates high-dimensional covariates (p > 50) via 
     Gavish-Donoho optimal hard thresholding and supervised metric learning.
 License: GPL (>= 3)
-URL: https://github.com/amjed-droid/LMDT
+URL: https://amjed-droid.github.io/LMDT/,
+    https://github.com/amjed-droid/LMDT
 BugReports: https://github.com/amjed-droid/LMDT/issues
 Depends: 
     R (>= 4.0.0)

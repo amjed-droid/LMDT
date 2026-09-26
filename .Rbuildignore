@@ -3,3 +3,6 @@
 ^tests/testthat/_snaps$
 ^\.github$
 ^\.gitignore$
+^_pkgdown\.yml$
+^pkgdown\.yaml$
+^docs$
