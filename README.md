@@ -12,7 +12,7 @@ Unlike classical tests (Breusch–Pagan, White) that rely on restrictive linear 
 
 ## Key Features
 
-- **Kurtosis Invariance:** The zero-diagonal structure of the affinity operator completely eliminates fourth-order error moments from the asymptotic variance, guaranteeing exact size calibration under heavy-tailed (e.g., Student-$t$) error distributions.
+- **Asymptotic Kurtosis Invariance:** The zero-diagonal structure of the affinity operator asymptotically eliminates fourth-order error moments from the limiting variance at rate $O(1/n)$, providing robust size calibration under heavy-tailed (e.g., Student-$t$) error distributions.
 - **Fast Computational Complexity:** Evaluates in $O(k \cdot n \log n)$ time, scaling easily to thousands of observations.
 - **High-Dimensional Scaling ($p > 50$):** Combines unsupervised Gavish–Donoho optimal singular-value thresholding and supervised metric learning to prevent noise dilution.
 - **S3 Object-Oriented Interface:** Works seamlessly with `lm()` fit objects, symbolic formulas (`y ~ x1 + x2`), and numeric matrices.
