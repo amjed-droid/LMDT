@@ -50,7 +50,7 @@ $`k`$-nearest neighbors normalized Laplacian matrix.
 remotes::install_github("amjed-droid/LMDT")
 ```
 
-### From CRAN (Upcoming)
+### From CRAN
 
 ``` r
 

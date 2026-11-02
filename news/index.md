@@ -2,6 +2,8 @@
 
 ## LMDT 0.1.0
 
+CRAN release: 2026-10-24
+
 - Initial release of the `LMDT` package for CRAN submission.
 - Implements the Local Manifold Dispersion Test for regression
   heteroskedasticity.
