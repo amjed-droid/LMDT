@@ -29,7 +29,7 @@ Unlike classical tests (Breusch–Pagan, White) that rely on restrictive linear 
 remotes::install_github("amjed-droid/LMDT")
 ```
 
-### From CRAN (Upcoming)
+### From CRAN
 
 ```r
 install.packages("LMDT")
